@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 export default function Textform(props) {
 
-    const [text, setText] = useState('Enter text here');
+    const [text, setText] = useState('');
 
 
 
@@ -18,6 +18,12 @@ export default function Textform(props) {
         let newText = text.toLocaleLowerCase();
         setText(newText);
     }
+    const handleboldclick = () => {
+
+        let newText = text.tp();
+        setText(newText);
+    }
+
     const handlechange = (event) => {
 
         setText(event.target.value);
@@ -36,6 +42,7 @@ export default function Textform(props) {
                 </div>
                 <button className="btn btn primary mx-2" onClick={handleUpclick}> Convert to uppercase</button>
                 <button className="btn btn primary mx-2" onClick={handleloclick}> Convert to lowercase</button>
+                <button className="btn btn primary mx-2" onClick={handleboldclick}> Convert to Bold</button>
             </div>
             <div className="container mp3">
                 <h2>Your text summary</h2>
